@@ -202,6 +202,49 @@ code {
   margin: 0 0.25em;
   padding: 0.25em 0.65em; }
 
+.academic-row {
+    display: flex;
+    justify-content: center; /* Center align items */
+    gap: 30px; /* Spacing between degrees */
+    flex-wrap: wrap; /* Ensures responsiveness */
+}
+
+.academic-box {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    flex: 1;
+    min-width: 320px; /* Prevents overlapping */
+    max-width: 500px; /* Controls box width */
+}
+
+.academic-content {
+    display: flex;
+    align-items: center;
+    border: 2px solid transparent;
+    padding: 10px;
+}
+
+.image.object {
+    flex-shrink: 0;
+    margin-right: 15px;
+}
+
+.text-content {
+    flex-grow: 1;
+    font-size: 14px;
+}
+
+.text-content h3 {
+    font-size: 16px;
+}
+
+.text-content p {
+    font-size: 13px;
+}
+
+
+
 pre {
   -webkit-overflow-scrolling: touch;
   font-family: "Courier New", monospace;
