@@ -21,7 +21,6 @@
       padding: 30px;
       color: #333;
     }
-
     /* =============== Container & Heading =============== */
     .container {
       background-color: #fff;
@@ -39,7 +38,6 @@
       font-weight: 600;
       color: #4a4a4a;
     }
-
     /* =============== Table Styling =============== */
     table {
       width: 100%;
@@ -68,7 +66,6 @@
       text-align: left;
       width: 180px;
     }
-
     /* =============== Select Element =============== */
     select {
       width: 80px;
@@ -76,7 +73,6 @@
       border-radius: 4px;
       border: 1px solid #ccc;
     }
-
     /* =============== Form Fields =============== */
     .form-fields {
       display: flex;
@@ -95,7 +91,6 @@
       border: 1px solid #ccc;
       border-radius: 4px;
     }
-
     /* =============== Submit Button =============== */
     button {
       display: block;
@@ -115,7 +110,6 @@
     button:active {
       background-color: #388e3c;
     }
-
     /* =============== Responsive Table (Optional) =============== */
     @media (max-width: 768px) {
       table, thead, tbody, th, td, tr {
@@ -164,7 +158,7 @@
 </head>
 <body>
   <div class="container">
-    <h1>Mental Wellbeing Tasks</h1>
+    <h1>Please select Yes/No from the drop-down showcasing your personal opinion on whether you think the given task is possible or not in the given context. Context names are the column name, and the row consists of mental well-being tasks.</h1>
     <form id="wellbeingForm" action="https://jsttjfi7za.execute-api.ap-south-1.amazonaws.com/ProcessWellbeingSubmission" method="POST" enctype="application/x-www-form-urlencoded">
       <table id="tasksTable">
         <thead>
@@ -326,9 +320,18 @@
       });
     });
 
-    // 7) Custom form submission handler
+    // 7) Custom form submission handler with required validation
     document.getElementById('wellbeingForm').addEventListener('submit', function(e) {
       e.preventDefault(); // Prevent default form submission
+      
+      // Validate that all select fields are answered (not "Empty")
+      const selects = document.querySelectorAll('select');
+      for (const select of selects) {
+        if (select.value === "Empty") {
+          alert("Please answer all questions before submitting the form.");
+          return; // Stop submission if any question is unanswered
+        }
+      }
       
       // Create FormData object from the form
       const formData = new FormData(this);
