@@ -1,4 +1,4 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1"> <title>Welcome to Nilesh's Portfolio</title> <!-- Google Font for calligraphy --> <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet"> <style> /* Reset and full viewport styling */ html, body { margin: 0; padding: 0; overflow: hidden; width: 100%; height: 100%; background: radial-gradient(circle, #ffffff, #ffeedd); font-family: Arial, sans-serif; } /* Splash screen container with soft gradient */ #splash-screen { position: fixed; z-index: 1000; top: 0; left: 0; width: 100vw; height: 100vh; background: linear-gradient(135deg, #fdfbfb, #ebedee); display: flex; justify-content: center; align-items: center; flex-direction: column; } /* Fullscreen canvas for particle animation */ #splash-canvas { position: absolute; top: 0; left: 0; } /* Final display container that appears after particle animation */ #final-display { position: relative; z-index: 1001; opacity: 0; transition: opacity 1s ease-out; pointer-events: none; } /* Container for images, name, lines, and button */ .final-container { display: flex; align-items: center; justify-content: center; flex-direction: column; } /* Top row with robot, name block, and human */ .final-row { display: flex; align-items: center; justify-content: center; } /* Robot and human images styling */ .final-row img { width: 80px; height: auto; margin: 0 20px; } /* Name text styling in elegant calligraphy */ .name-text { text-align: center; color: #FFA500; /* Orange color */ text-shadow: 3px 3px 8px rgba(0,0,0,0.3); } .name-text h1 { font-family: 'Great Vibes', cursive; font-size: 80px; margin: 0; } .name-text h2 { font-family: 'Great Vibes', cursive; font-size: 50px; margin: 0; } /* Two horizontal elegant lines below the name */ .lines { margin-top: 10px; width: 100%; display: flex; flex-direction: column; align-items: center; } .lines hr { border: none; height: 2px; background-color: #FFA500; width: 70%; margin: 5px 0; } /* Elegant Home button styling */ #home-button { margin-top: 20px; padding: 10px 25px; background: linear-gradient(135deg, #FFA500, #FF8C00); border: none; border-radius: 25px; color: #fff; font-size: 18px; font-family: 'Great Vibes', cursive; cursor: pointer; box-shadow: 2px 2px 8px rgba(0,0,0,0.3); transition: background 0.3s ease; } #home-button:hover { background: linear-gradient(135deg, #FF8C00, #FFA500); } </style> </head> <body> <!-- Splash Screen --> <div id="splash-screen"> <canvas id="splash-canvas"></canvas> <!-- Final display with calligraphy, images, lines and Home button --> <div id="final-display"> <div class="final-container"> <div class="final-row"> <!-- Robot image on the left --> <img id="robot-img" src="https://img.icons8.com/dusk/64/000000/robot.png" alt="Robot"> <!-- Name text block --> <div class="name-text"> <h2>निलेश कुमार साहु</h2> <h1>Nilesh Kumar Sahu</h1> <div class="lines"> <hr> <hr> </div> </div> <!-- Human image on the right --> <img id="human-img" src="https://img.icons8.com/dusk/64/000000/person-male.png" alt="Human"> </div> <!-- Home button below the lines --> <button id="home-button">Home</button> </div> </div> </div> <script> document.addEventListener('DOMContentLoaded', function() { const canvas = document.getElementById('splash-canvas'); const ctx = canvas.getContext('2d'); const finalDisplay = document.getElementById('final-display'); const homeButton = document.getElementById('home-button'); canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1"> <title>Welcome to Nilesh's Portfolio</title> <!-- Google Font for calligraphy --> <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet"> <style> /* Reset and full viewport styling */ html, body { margin: 0; padding: 0; overflow: hidden; width: 100%; height: 100%; background: radial-gradient(circle, #ffffff, #ffeedd); font-family: Arial, sans-serif; } /* Splash screen container with soft gradient */ #splash-screen { position: fixed; z-index: 1000; top: 0; left: 0; width: 100vw; height: 100vh; background: linear-gradient(135deg, #fdfbfb, #ebedee); display: flex; justify-content: center; align-items: center; flex-direction: column; } /* Fullscreen canvas for particle animation */ #splash-canvas { position: absolute; top: 0; left: 0; } /* Final display container that appears after particle animation */ #final-display { position: relative; z-index: 1001; opacity: 0; transition: opacity 1s ease-out; pointer-events: none; } /* Container for images, name, lines, and button */ .final-container { display: flex; align-items: center; justify-content: center; flex-direction: column; } /* Top row with robot, name block, and human */ .final-row { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; } /* Robot and human images styling */ .final-row img { width: 80px; height: auto; margin: 0 20px; } /* Name text styling in elegant calligraphy using responsive sizes */ .name-text { text-align: center; color: #FFA500; /* Orange color */ text-shadow: 3px 3px 8px rgba(0,0,0,0.3); } .name-text h1 { font-family: 'Great Vibes', cursive; font-size: clamp(40px, 8vw, 80px); margin: 0; } .name-text h2 { font-family: 'Great Vibes', cursive; font-size: clamp(30px, 5vw, 50px); margin: 0; } /* Two horizontal elegant lines below the name */ .lines { margin-top: 10px; width: 100%; display: flex; flex-direction: column; align-items: center; } .lines hr { border: none; height: 2px; background-color: #FFA500; width: 70%; margin: 5px 0; } /* Elegant Home button styling using responsive font size */ #home-button { margin-top: 20px; padding: 10px 25px; background: linear-gradient(135deg, #FFA500, #FF8C00); border: none; border-radius: 25px; color: #fff; font-size: clamp(16px, 3vw, 18px); font-family: 'Great Vibes', cursive; cursor: pointer; box-shadow: 2px 2px 8px rgba(0,0,0,0.3); transition: background 0.3s ease; } #home-button:hover { background: linear-gradient(135deg, #FF8C00, #FFA500); } </style> </head> <body> <!-- Splash Screen --> <div id="splash-screen"> <canvas id="splash-canvas"></canvas> <!-- Final display with calligraphy, images, lines and Home button --> <div id="final-display"> <div class="final-container"> <div class="final-row"> <!-- Robot image on the left --> <img id="robot-img" src="https://img.icons8.com/dusk/64/000000/robot.png" alt="Robot"> <!-- Name text block --> <div class="name-text"> <h1>निलेश कुमार साहु</h1> <h2>Nilesh Kumar Sahu</h2> <div class="lines"> <hr> <hr> </div> </div> <!-- Human image on the right --> <img id="human-img" src="https://img.icons8.com/dusk/64/000000/person-male.png" alt="Human"> </div> <!-- Home button below the lines --> <button id="home-button">Home</button> </div> </div> </div> <script> document.addEventListener('DOMContentLoaded', function() { const canvas = document.getElementById('splash-canvas'); const ctx = canvas.getContext('2d'); const finalDisplay = document.getElementById('final-display'); const homeButton = document.getElementById('home-button'); canvas.width = window.innerWidth; canvas.height = window.innerHeight;
  
   // Create elegant orange particles for the effect
   const totalParticles = 1000;
@@ -21,15 +21,20 @@
   offCanvas.width = canvas.width;
   offCanvas.height = canvas.height;
   
-  // Draw your name in calligraphic style in orange
+  // Compute dynamic font sizes based on screen size
+  const baseSize = Math.min(canvas.width, canvas.height);
+  const fontSize1 = Math.min(Math.max(baseSize * 0.1, 40), 80);  // h1 between 40 and 80px
+  const fontSize2 = Math.min(Math.max(baseSize * 0.08, 30), 50); // h2 between 30 and 50px
+  
+  // Draw your name in calligraphic style in orange on offscreen canvas
   offCtx.fillStyle = '#FFA500';
   offCtx.textAlign = 'center';
-  offCtx.font = "bold 90px 'Great Vibes', cursive";
+  offCtx.font = `bold ${fontSize1}px 'Great Vibes', cursive`;
   offCtx.fillText("निलेश कुमार साहु", canvas.width / 2, canvas.height / 2 - 40);
-  offCtx.font = "bold 70px 'Great Vibes', cursive";
+  offCtx.font = `bold ${fontSize2}px 'Great Vibes', cursive`;
   offCtx.fillText("Nilesh Kumar Sahu", canvas.width / 2, canvas.height / 2 + 60);
   
-  // Get pixel data from the offscreen canvas
+  // Get pixel data from offscreen canvas
   const imageData = offCtx.getImageData(0, 0, canvas.width, canvas.height);
   const pixels = imageData.data;
   const targets = [];
@@ -57,7 +62,7 @@
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     
     particles.forEach(p => {
-      // Start animating after the individual particle delay
+      // Start animating each particle after its individual delay
       if (elapsed > p.delay) {
         p.x += (p.destX - p.x) * 0.06;
         p.y += (p.destY - p.y) * 0.06;
@@ -65,7 +70,6 @@
       }
       ctx.beginPath();
       ctx.arc(p.x, p.y, particleSize, 0, Math.PI * 2);
-      // Use a refined orange color with dynamic opacity
       ctx.fillStyle = `rgba(255, 140, 0, ${p.alpha})`;
       ctx.shadowColor = 'rgba(0, 0, 0, 0.1)';
       ctx.shadowBlur = 5;
@@ -79,7 +83,7 @@
     } else {
       canvas.style.transition = "opacity 1s ease-out";
       canvas.style.opacity = 0;
-      // After fade-out, hide the canvas and reveal the final display
+      // After fade-out, hide canvas and reveal the final display
       setTimeout(() => {
         canvas.style.display = "none";
         finalDisplay.style.pointerEvents = "auto";
@@ -90,11 +94,12 @@
   
   requestAnimationFrame(animate);
   
-  // Redirect to home.html when the Home button is clicked
+  // Redirect to home.html only when the Home button is clicked
   homeButton.addEventListener('click', () => {
     window.location.href = 'home.html';
   });
 });
+
 
 
 </script>
